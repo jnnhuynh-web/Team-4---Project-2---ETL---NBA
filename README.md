@@ -1,1 +1,1 @@
-# Team-4---Project-2---ETL---NBA
+# Team-4/Project-2/ETL-NBA
