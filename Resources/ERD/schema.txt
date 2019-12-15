@@ -1,0 +1,93 @@
+player
+-
+player_id PK int
+full_name varchar(40)
+first_name varchar(20)
+last_name varchar(20)
+is_active boolean 
+born_country varchar(30)
+
+team
+-
+team_id PK char(3)
+full_name varchar(30)
+nickname varchar(15)
+city varchar(20)
+state varchar(20)
+year_founded int
+api_team_id int
+
+team_player
+-
+team_id PK CHAR(3) FK >- team.team_id
+player_id PK INT FK >- player.player_id
+start_season PK INT
+end_season INT
+
+salary
+-
+salary_id PK int
+player_id int FK >- player.player_id
+salary float
+start_season int
+end_season int
+id_team CHAR(3)
+
+player_stats
+-
+player_id PK int FK >- player.player_id
+start_season PK int
+end_season int
+team_id varchar(3)
+GP float
+GS float
+MIN float
+FGM float
+FGA float
+FG_PCT float
+FG3M float
+FG3A float
+FG3_PCT float
+FTM float
+FTA float
+FT_PCT float
+OREB float
+DREB float
+REB float
+AST float
+STL float
+BLK float
+TOV float
+PF float
+PTS float
+
+team_stats
+-
+team_id PK varchar(3) FK >- team.team_id
+start_season PK int
+end_season int
+GP float
+W float
+L float
+W_PCT float
+MIN float
+FGM float
+FGA float
+FG_PCT float
+FG3M float
+FG3A float
+FG3_PCT float
+FTM float
+FTA float
+FT_PCT float
+OREB float
+DREB float
+REB float
+AST float
+TOV float
+STL float
+BLK float
+BLKA float
+PF float
+PFD float
+PTS float
