@@ -8,7 +8,7 @@ CREATE TABLE "player" (
     "first_name" varchar(20)   NOT NULL,
     "last_name" varchar(20)   NOT NULL,
     "is_active" boolean   NOT NULL,
-    "born_country" varchar(30)   NOT NULL,
+    "born_country" varchar(30)   NULL,
     CONSTRAINT "pk_player" PRIMARY KEY (
         "player_id"
      )
@@ -30,10 +30,9 @@ CREATE TABLE "team" (
 CREATE TABLE "team_player" (
     "team_id" CHAR(3)   NOT NULL,
     "player_id" INT   NOT NULL,
-    "start_season" INT   NOT NULL,
-    "end_season" INT   NOT NULL,
+    "season_id" CHAR(7)   NOT NULL,
     CONSTRAINT "pk_team_player" PRIMARY KEY (
-        "team_id","player_id","start_season"
+        "team_id","player_id","season_id"
      )
 );
 
@@ -41,8 +40,8 @@ CREATE TABLE "salary" (
     "salary_id" int   NOT NULL,
     "player_id" int   NOT NULL,
     "salary" float   NOT NULL,
-    "start_season" int   NOT NULL,
-    "end_season" int   NOT NULL,
+    "start_season" int   NULL,
+    "end_season" int   NULL,
     "id_team" CHAR(3)   NOT NULL,
     CONSTRAINT "pk_salary" PRIMARY KEY (
         "salary_id"
@@ -51,56 +50,54 @@ CREATE TABLE "salary" (
 
 CREATE TABLE "player_stats" (
     "player_id" int   NOT NULL,
-    "start_season" int   NOT NULL,
-    "end_season" int   NOT NULL,
+    "season_id" CHAR(7)   NOT NULL,
     "team_id" varchar(3)   NOT NULL,
-    "GP" float   NOT NULL,
-    "GS" float   NOT NULL,
-    "MIN" float   NOT NULL,
-    "FGM" float   NOT NULL,
-    "FGA" float   NOT NULL,
-    "FG_PCT" float   NOT NULL,
-    "FG3M" float   NOT NULL,
-    "FG3A" float   NOT NULL,
-    "FG3_PCT" float   NOT NULL,
-    "FTM" float   NOT NULL,
-    "FTA" float   NOT NULL,
-    "FT_PCT" float   NOT NULL,
-    "OREB" float   NOT NULL,
-    "DREB" float   NOT NULL,
-    "REB" float   NOT NULL,
-    "AST" float   NOT NULL,
-    "STL" float   NOT NULL,
-    "BLK" float   NOT NULL,
-    "TOV" float   NOT NULL,
-    "PF" float   NOT NULL,
-    "PTS" float   NOT NULL,
+    "GP" float   NULL,
+    "GS" float   NULL,
+    "MIN" float   NULL,
+    "FGM" float   NULL,
+    "FGA" float   NULL,
+    "FG_PCT" float   NULL,
+    "FG3M" float   NULL,
+    "FG3A" float   NULL,
+    "FG3_PCT" float   NULL,
+    "FTM" float   NULL,
+    "FTA" float   NULL,
+    "FT_PCT" float   NULL,
+    "OREB" float   NULL,
+    "DREB" float   NULL,
+    "REB" float   NULL,
+    "AST" float   NULL,
+    "STL" float   NULL,
+    "BLK" float   NULL,
+    "TOV" float   NULL,
+    "PF" float   NULL,
+    "PTS" float   NULL,
     CONSTRAINT "pk_player_stats" PRIMARY KEY (
-        "player_id","start_season"
+        "player_id","season_id"
      )
 );
 
 CREATE TABLE "team_stats" (
     "team_id" varchar(3)   NOT NULL,
-    "start_season" int   NOT NULL,
-    "end_season" int   NOT NULL,
-    "GP" float   NOT NULL,
-    "W" float   NOT NULL,
-    "L" float   NOT NULL,
-    "W_PCT" float   NOT NULL,
-    "MIN" float   NOT NULL,
-    "FGM" float   NOT NULL,
-    "FGA" float   NOT NULL,
-    "FG_PCT" float   NOT NULL,
-    "FG3M" float   NOT NULL,
-    "FG3A" float   NOT NULL,
-    "FG3_PCT" float   NOT NULL,
-    "FTM" float   NOT NULL,
-    "FTA" float   NOT NULL,
-    "FT_PCT" float   NOT NULL,
-    "OREB" float   NOT NULL,
-    "DREB" float   NOT NULL,
-    "REB" float   NOT NULL,
+    "season_id" CHAR(7)   NOT NULL,
+    "GP" float   NULL,
+    "W" float   NULL,
+    "L" float   NULL,
+    "W_PCT" float   NULL,
+    "MIN" float   NULL,
+    "FGM" float   NULL,
+    "FGA" float   NULL,
+    "FG_PCT" float   NULL,
+    "FG3M" float   NULL,
+    "FG3A" float   NULL,
+    "FG3_PCT" float   NULL,
+    "FTM" float   NULL,
+    "FTA" float   NULL,
+    "FT_PCT" float   NULL,
+    "OREB" float   NULL,
+    "DREB" float   NULL,
+    "REB" float   NULL,
     "AST" float   NOT NULL,
     "TOV" float   NOT NULL,
     "STL" float   NOT NULL,
@@ -110,7 +107,7 @@ CREATE TABLE "team_stats" (
     "PFD" float   NOT NULL,
     "PTS" float   NOT NULL,
     CONSTRAINT "pk_team_stats" PRIMARY KEY (
-        "team_id","start_season"
+        "team_id","season_id"
      )
 );
 
