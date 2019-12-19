@@ -5,7 +5,7 @@ full_name varchar(40)
 first_name varchar(20)
 last_name varchar(20)
 is_active boolean 
-born_country varchar(30)
+born_country varchar(30) NULL
 
 team
 -
@@ -21,68 +21,65 @@ team_player
 -
 team_id PK CHAR(3) FK >- team.team_id
 player_id PK INT FK >- player.player_id
-start_season PK INT
-end_season INT
+season_id PK CHAR(7)
 
 salary
 -
 salary_id PK int
 player_id int FK >- player.player_id
 salary float
-start_season int
-end_season int
+start_season int NULL
+end_season int NULL
 id_team CHAR(3)
 
 player_stats
 -
 player_id PK int FK >- player.player_id
-start_season PK int
-end_season int
+season_id PK CHAR(7)
 team_id varchar(3)
-GP float
-GS float
-MIN float
-FGM float
-FGA float
-FG_PCT float
-FG3M float
-FG3A float
-FG3_PCT float
-FTM float
-FTA float
-FT_PCT float
-OREB float
-DREB float
-REB float
-AST float
-STL float
-BLK float
-TOV float
-PF float
-PTS float
+GP float NULL
+GS float NULL
+MIN float NULL
+FGM float NULL
+FGA float NULL
+FG_PCT float NULL
+FG3M float NULL
+FG3A float NULL
+FG3_PCT float NULL
+FTM float NULL
+FTA float NULL
+FT_PCT float NULL
+OREB float NULL
+DREB float NULL
+REB float NULL
+AST float NULL
+STL float NULL
+BLK float NULL
+TOV float NULL
+PF float NULL
+PTS float NULL
 
 team_stats
 -
 team_id PK varchar(3) FK >- team.team_id
-start_season PK int
-end_season int
-GP float
-W float
-L float
-W_PCT float
-MIN float
-FGM float
-FGA float
-FG_PCT float
-FG3M float
-FG3A float
-FG3_PCT float
-FTM float
-FTA float
-FT_PCT float
-OREB float
-DREB float
-REB float
+season_id PK CHAR(7)
+GP float NULL
+W float NULL
+L float NULL
+W_PCT float NULL
+MIN float NULL
+FGM float NULL
+FGA float NULL
+FG_PCT float NULL
+FG3M float NULL
+FG3A float NULL
+FG3_PCT float NULL
+FTM float NULL
+FTA float NULL
+FT_PCT float NULL
+OREB float NULL
+DREB float NULL
+REB float NULL
 AST float
 TOV float
 STL float
