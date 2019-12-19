@@ -37,54 +37,38 @@ player_stats
 player_id PK int FK >- player.player_id
 season_id PK CHAR(7)
 team_id varchar(3)
-GP float NULL
-GS float NULL
-MIN float NULL
-FGM float NULL
-FGA float NULL
-FG_PCT float NULL
-FG3M float NULL
-FG3A float NULL
-FG3_PCT float NULL
-FTM float NULL
-FTA float NULL
-FT_PCT float NULL
-OREB float NULL
-DREB float NULL
-REB float NULL
-AST float NULL
-STL float NULL
-BLK float NULL
-TOV float NULL
-PF float NULL
-PTS float NULL
+PTS FLOAT NULL
+BLK FLOAT NULL
+STL FLOAT NULL
+AST FLOAT NULL
+REB FLOAT NULL
+FT_PCT FLOAT NULL
+FTA FLOAT NULL
+FG3_PCT FLOAT NULL
+FG3A FLOAT NULL
+FG_PCT FLOAT NULL
+FGA FLOAT NULL
+MIN FLOAT NULL
+GP INT NULL
+USG FLOAT NULL
+BPM FLOAT NULL
+VORP FLOAT NULL
+
 
 team_stats
 -
 team_id PK varchar(3) FK >- team.team_id
 season_id PK CHAR(7)
-GP float NULL
-W float NULL
-L float NULL
-W_PCT float NULL
-MIN float NULL
-FGM float NULL
-FGA float NULL
-FG_PCT float NULL
-FG3M float NULL
-FG3A float NULL
-FG3_PCT float NULL
-FTM float NULL
-FTA float NULL
-FT_PCT float NULL
-OREB float NULL
-DREB float NULL
-REB float NULL
-AST float
-TOV float
-STL float
-BLK float
-BLKA float
-PF float
-PFD float
-PTS float
+G INT NULL
+FG_PCT FLOAT NULL
+3P_PCT FLOAT NULL
+FT_PCT FLOAT NULL
+OREB FLOAT NULL
+DREB FLOAT NULL
+PPG FLOAT NULL
+RPG FLOAT NULL
+APG FLOAT NULL
+TO FLOAT NULL
+SPG FLOAT NULL
+BPG FLOAT NULL
+PF FLOAT NULL
