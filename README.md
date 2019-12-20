@@ -1,59 +1,22 @@
-Guidelines for ETL Project
-This document contains guidelines, requirements, and suggestions for Project 1.
+Project Title: NBA Players and their Salaries
 
-Team Effort
-Due to the short timeline, teamwork will be crucial to the success of this project! Work closely with your team through all phases of the project to ensure that there are no surprises at the end of the week.
-Working in a group enables you to tackle more difficult problems than you'd be able to working alone. In other words, working in a group allows you to work smart and dream big. Take advantage of it!
+Team Members:
+Alessandra Araujo
+Nadia Iskandar
+Jennifer Huynh
 
-Project Proposal
-Before you start writing any code, remember that you only have one week to complete this project. View this project as a typical assignment from work. Imagine a bunch of data came in and you and your team are tasked with migrating it to a production data base.
-Take advantage of your Instructor and TA support during office hours and class project work time. They are a valuable resource and can help you stay on track.
+Project Description/Outline:
+To create a database of NBA players and their salaries. We will able be scraping data from the NBA site to get an additional source of data (player - country and teams - logos). 
 
-Finding Data
-Your project must use 2 or more sources of data. We recommend the following sites to use as sources of data:
+Extract data sources:
+NBA Dataset of Players and Teams- https://pypi.org/project/nba-api/
+Salaries of Players - https://www.kaggle.com/whitefero/nba-player-salary-19902017 
+NBA Site to Web Scrape the country of origin of players - https://ca.global.nba.com/playerindex/?_ga=2.145643060.1250585434.1576345060-40322362.1576345059 
+Player Statatistatics- https://www.kaggle.com/schmadam97/nba-regular-season-stats-20182019 
 
+Transformations:
+For the tables created from the CSV files and the scraped dataset (ex, salary, player_stats, and team_stats) we had to drop some columns that were not required. We also renamed the table columns to match the main tables that were pulled from the API.
+For the table team created based on API pull, we decided to use the abbreviation as primary key because, in this scenario it's unique and all the other data refers to abbreviation and not the numeric id.
 
-data.world
-
-
-Kaggle
-
-
-You can also use APIs or data scraped from the web. However, get approval from your instructor first. Again, there is only a week to complete this!
-
-Data Cleanup & Analysis
-Once you have identified your datasets, perform ETL on the data. Make sure to plan and document the following:
-
-
-The sources of data that you will extract from.
-
-
-The type of transformation needed for this data (cleaning, joining, filtering, aggregating, etc).
-
-
-The type of final production database to load the data into (relational or non-relational).
-
-
-The final tables or collections that will be used in the production database.
-
-
-You will be required to submit a final technical report with the above information and steps required to reproduce your ETL process.
-
-Project Report
-At the end of the week, your team will submit a Final Report that describes the following:
-
-
-Extract: your original data sources and how the data was formatted (CSV, JSON, pgAdmin 4, etc).
-
-
-Transform: what data cleaning or transformation was required.
-
-
-Load: the final database, tables/collections, and why this was chosen.
-
-
-Please upload the report to Github and submit a link to Bootcampspot.
-
-
-Copyright
-Coding Boot Camp © 2019. All Rights Reserved.
+Load:
+We chose SQL over noSQL because SQL provided more structure to our tables. One of the main determining factors was that we did not want to accidentally insert the same data twice. We also knew the data we were going to load, so we did not need the flexibility that noSQL allows for.
