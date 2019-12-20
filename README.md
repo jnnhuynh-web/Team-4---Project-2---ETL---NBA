@@ -10,8 +10,11 @@ To create a database of NBA players and their salaries. We will able be scraping
 
 Extract data sources:
 NBA Dataset of Players and Teams- https://pypi.org/project/nba-api/
+
 Salaries of Players - https://www.kaggle.com/whitefero/nba-player-salary-19902017 
+
 NBA Site to Web Scrape the country of origin of players - https://ca.global.nba.com/playerindex/?_ga=2.145643060.1250585434.1576345060-40322362.1576345059 
+
 Player Statatistatics- https://www.kaggle.com/schmadam97/nba-regular-season-stats-20182019 
 
 Transformations:
